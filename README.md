@@ -1,3 +1,8 @@
-# Calculadora---dart
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+# Calculadora em Dart
+Projeto de calculadora interativa feita em Dart.
+
+cd C:\calc\calculadora\bin
+
+dart run calculadora.dart 
+
+Comandos para Fazer funcionar no terminal
