@@ -2,7 +2,7 @@
 
 Este repositório contém duas versões de uma **calculadora**:  
 - **Main (padrão):** Calculadora em **Dart**, interativa via terminal.  
-- **Flutter branch:** Calculadora em **Flutter**, com interface gráfica inspirada na calculadora do Windows.
+- **Flutter branch (master):** Calculadora em **Flutter**, com interface gráfica inspirada na calculadora do Windows.
 
 ---
 
