@@ -1,11 +1,12 @@
-# 🧮 Calculadora em Dart
+# 🧮 Calculadora em Dart e Flutter
 
-Uma **calculadora interativa** feita em **Dart**, executada diretamente no terminal.  
-Permite realizar operações matemáticas básicas como **adição, subtração, multiplicação e divisão**.
+Este repositório contém duas versões de uma **calculadora**:  
+- **Main (padrão):** Calculadora em **Dart**, interativa via terminal.  
+- **Flutter branch:** Calculadora em **Flutter**, com interface gráfica inspirada na calculadora do Windows.
 
 ---
 
-## 🚀 Como executar
+## 🚀 Como executar (versão Dart - terminal)
 
 1. Certifique-se de que o **Dart SDK** está instalado em sua máquina.  
    👉 [Download Dart SDK](https://dart.dev/get-dart)
