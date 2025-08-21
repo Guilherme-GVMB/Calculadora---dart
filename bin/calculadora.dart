@@ -4,57 +4,51 @@ void main() {
   print('=== Calculadora Interativa ===');
 
   while (true) {
-    print('\nEscolha a operação:');
-    print('1 - Adição (+)');
-    print('2 - Subtração (-)');
-    print('3 - Multiplicação (*)');
-    print('4 - Divisão (/)');
-    print('0 - Sair');
+    print('\nDigite a expressão (ex: 3 + 5) ou "sair" para encerrar:');
+    String? entrada = stdin.readLineSync();
 
-    String? escolha = stdin.readLineSync();
-
-    // Valida se a escolha é nula ou não está entre 0 e 4
-    if (escolha == null || !['0', '1', '2', '3', '4'].contains(escolha)) {
-      print('❌ Entrada inválida! Digite apenas 0, 1, 2, 3 ou 4.');
-      continue; // volta para o menu
+    if (entrada == null) {
+      print('❌ Entrada inválida!');
+      continue;
     }
 
-    if (escolha == '0') {
+    if (entrada.toLowerCase() == 'sair') {
       print('Saindo da calculadora...');
       break;
     }
 
-    // Solicita os números
-    print('Digite o primeiro número:');
-    double? num1 = double.tryParse(stdin.readLineSync()!);
-    if (num1 == null) {
-      print('❌ Número inválido!');
+    // Separar números e operador usando espaço
+    List<String> partes = entrada.split(' ');
+    if (partes.length != 3) {
+      print('❌ Formato inválido! Use: número operador número (ex: 3 + 5)');
       continue;
     }
 
-    print('Digite o segundo número:');
-    double? num2 = double.tryParse(stdin.readLineSync()!);
-    if (num2 == null) {
+    double? num1 = double.tryParse(partes[0]);
+    String operador = partes[1];
+    double? num2 = double.tryParse(partes[2]);
+
+    if (num1 == null || num2 == null) {
       print('❌ Número inválido!');
       continue;
     }
 
     double resultado;
 
-    switch (escolha) {
-      case '1':
+    switch (operador) {
+      case '+':
         resultado = num1 + num2;
         print('Resultado: $resultado');
         break;
-      case '2':
+      case '-':
         resultado = num1 - num2;
         print('Resultado: $resultado');
         break;
-      case '3':
+      case '*':
         resultado = num1 * num2;
         print('Resultado: $resultado');
         break;
-      case '4':
+      case '/':
         if (num2 == 0) {
           print('❌ Erro: Divisão por zero!');
         } else {
@@ -62,6 +56,8 @@ void main() {
           print('Resultado: $resultado');
         }
         break;
+      default:
+        print('❌ Operador inválido! Use +, -, * ou /');
     }
   }
 }
